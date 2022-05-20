@@ -1,10 +1,17 @@
 const ofertas = {
-    '8781':{
+    /*'8781':{
         id: '8781',
         name: 'Aguacate Hass',
         price: 69.9,
         image: '/images/Name=Aguacate.png',
-        descunto: 0.18
+        descuento: 0.18
+    },*/
+    '8786':{
+        id: '8786',
+        name: 'Naranja',
+        priceOriginal: 20,
+        image: '/images/Name=Naranja.jpg',
+        descuento: 0.08
     },
     '8782':{
         id: '8782',
@@ -34,7 +41,7 @@ const ofertas = {
         image: '/images/Name=Tomate verde.jpg',
         descuento: 0.08
     },
-    '8786':{
+    /*'8786':{
         id: '8786',
         name: 'Naranja',
         priceOriginal: 20,
@@ -54,7 +61,7 @@ const ofertas = {
         priceOriginal: 23,
         image: '/images/Name=Jitomate Bola.jpg',
         descuento: 0.12
-    }, 
+    }, */
     '8789':{
         id: '8789',
         name: 'San Rafael pechuga de pavo',

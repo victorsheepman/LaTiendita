@@ -14,7 +14,11 @@ h3{
   font: $headline3;
 }
 
+
 main{
   padding: 40px;
   background-color: $color-bg;
+  @include small{
+    padding:  0px;
+  }
 }

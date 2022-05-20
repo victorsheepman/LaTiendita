@@ -1,4 +1,4 @@
-import { addToCart, removeFromCart } from "./actions";
+import { addToCart, addToState, removeFromCart } from "./actions";
 
 export const initialState = {
   cart: [],
@@ -18,20 +18,17 @@ export const reducerShop = (state:any, {type, payload}) => {
       case removeFromCart:
         return {
           ...state,
-          cart: state.cart.filter((items =>items.id !== payload.id))
+          cart: state.cart.filter((item => item.id !== payload.id))
         };
-      case 'AddToOffer':
-        return {
+      case addToState:
+        const dataPopular = payload.filter(item => item.descuento == null)
+        const dataOffer = payload.filter(item => item.descuento != null)
+        return{
           ...state,
-          offer: state.offer.filter(item => item.descuento !== null)
-        };
-      case: 'AddToPopular':
-      return{
-        ...state,
-        popular: state.offer.filter(item => item.descuento == null)
-      } 
+          popular: state.popular = dataPopular,
+          offer: state.offer = dataOffer,
+        } 
       default:
         throw new Error();
-    }
+      }
   }
-  
