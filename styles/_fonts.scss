@@ -13,3 +13,16 @@ $body2-regular: 400 0.875rem/1.5rem $font;
 $caption-regular: 400 0.75rem/1rem $font; 
 $caption-bold: 600 0.75rem/1rem $font; 
 
+
+h1{
+    font:$headline1 ;
+}
+h2{
+    font:$headline2 ;
+}
+.body1-regular{
+    font:$body1-regular
+}
+.caption-regular{
+    font: $caption-regular;
+}

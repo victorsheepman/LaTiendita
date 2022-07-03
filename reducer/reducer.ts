@@ -9,9 +9,12 @@ export const initialState = {
 };
 
 export const reducerShop = (state:any, {type, payload}) => {
-    switch (type) {
+  //debugger;  
+  switch (type) {
+      //debugger;
       case addToCart:
         return {
+          
          ...state,
          cart: state.cart.includes(payload) ? state.cart : [...state.cart, payload]
         };

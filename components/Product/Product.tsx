@@ -1,11 +1,21 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {useOffer} from '../../hooks/useOffer';
-export const Product = ({name, descuento, price, image}) => {
-  if (descuento === null) {
+import {ModalProduct} from '../ModalProduct/ModalProduct';
+import {AddButton} from '../AddButton/AddButton'
+export const Product = (
+  {
+    name, 
+    descuento, 
+    price, 
+    image
+  }) => {
 
-    return (
+  const [show, setShow] = useState(false);
+  
+  if (descuento === null) {
+    return (<>
       <div className='product'>
-          <figure className='product__image'>
+          <figure className='product__image' onClick={()=>setShow(true)}>
             <img src={image} alt="" />
           </figure>
           <div className='product__body'>
@@ -14,10 +24,16 @@ export const Product = ({name, descuento, price, image}) => {
                   {name}
               </p>
           </div>
-          <button className='product__button'>
+          {/*<button className='product__button'>
               Agregar
-          </button>
+    </button>*/}
+      <AddButton name={name}  price={price} image={image} />
       </div>
+      {
+        show && <ModalProduct price={price} name={name} image={image} setShow={setShow} />
+        
+      }
+      </>
     )
   }else{
      const offerView = () => 100 * descuento;
@@ -37,9 +53,10 @@ export const Product = ({name, descuento, price, image}) => {
                   {name}
               </p>
           </div>
-          <button className='product__button'>
+         {/* <button className='product__button'>
               Agregar
-          </button>
+     </button>*/}
+          <AddButton name={name} />  
       </div>
     )
   
