@@ -16,13 +16,33 @@ $caption-bold: 600 0.75rem/1rem $font;
 
 h1{
     font:$headline1 ;
+   
 }
 h2{
     font:$headline2 ;
 }
+.body-1-bold{
+    font:$body1-bold;
+}
 .body1-regular{
-    font:$body1-regular
+    font:$body1-regular;
+    @include small{
+        //styleName: Body 2/Regular;
+        font-family: Poppins;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 24px;
+        letter-spacing: 0em;
+        text-align: left;
+
+    }
 }
 .caption-regular{
     font: $caption-regular;
+}
+.body-2-regular{
+    font:$body2-regular;
+}
+.body-2-bold{
+   font: $body2-bold;
 }

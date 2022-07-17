@@ -1,6 +1,15 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { ButtonCount } from '../ButtonCount/ButtonCount';
+import {Selection, Seletion} from '../../containers/Selection/Selection'
+import { initialState } from 'reducer/reducer';
+import { AddButton } from '@components/AddButton/AddButton';
 
-export const ModalProduct = ({image, setShow, name, price}) => {
+
+
+export const ModalProduct = ({image, setShow, name, price,id }) => {
+    const { offer} = initialState
+    const isOffer = offer.some(i=>i.id == id );
+    
   return (
     <div className='shadowContainer'>
         <div className='modalProduct'>
@@ -20,14 +29,33 @@ export const ModalProduct = ({image, setShow, name, price}) => {
                         <span className='caption-regular'>
                             Precios con IVA incluido
                         </span> 
-                        <p className='body1-regular'>
-                            Peso aproximado por pieza, puede variar de acuerdo al peso real.
-                        </p>
+                        <div className='w-100'>
+                            <p className='body1-regular'>
+                                Peso aproximado por pieza, puede variar de acuerdo al peso real.
+                            </p>
+                        </div>
+                        
                     </div>
-                    
+                    {
+                        isOffer ?  
+                            <Selection 
+                                name={name}
+                                price={price}
+                                image={image}
+                            />
+                            : 
+                            <AddButton 
+                                name={name} 
+                                price={price}
+                                image={image}
+                            />
+                    }
+                   
                 </div>
-            </section>
+              
+            </section> 
            
+            
         </div>
 
     </div>

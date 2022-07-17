@@ -27,12 +27,12 @@ const Home: NextPage = () => {
     <main>
      <ProductList title={'Los más populares'}>
         {popular.map((item)=>(
-          <Product name={item.name} descuento={item.descuento} price={item.priceOriginal} image={item.image}/>
+          <Product id={item.id} name={item.name} descuento={item.descuento} price={item.priceOriginal} image={item.image}/>
         ))}
       </ProductList>
       <ProductList title={'Ofertas'}>
         {offer.map((item)=>(
-          <Product name={item.name} descuento={item.descuento} price={item.priceOriginal} image={item.image}/>
+          <Product id={item.id} name={item.name} descuento={item.descuento} price={item.priceOriginal} image={item.image}/>
         ))}
       </ProductList>
       {/* <Prueba />*/}

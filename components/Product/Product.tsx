@@ -7,7 +7,8 @@ export const Product = (
     name, 
     descuento, 
     price, 
-    image
+    image,
+    id
   }) => {
 
   const [show, setShow] = useState(false);
@@ -30,7 +31,7 @@ export const Product = (
       <AddButton name={name}  price={price} image={image} />
       </div>
       {
-        show && <ModalProduct price={price} name={name} image={image} setShow={setShow} />
+        show && <ModalProduct id={id} price={price} name={name} image={image} setShow={setShow} />
         
       }
       </>
@@ -40,11 +41,12 @@ export const Product = (
      // eslint-disable-next-line react-hooks/rules-of-hooks
      const {newPrice} = useOffer(descuento, price)
      return (
+      <>
       <div className='product'>
           <span className='product__offer'>
             {offerView()}% dto.
           </span>
-          <figure className='product__image'>
+          <figure className='product__image' onClick={()=>setShow(true)}>
             <img src={image} alt="" />
           </figure>
           <div className='product__body'>
@@ -58,6 +60,10 @@ export const Product = (
      </button>*/}
           <AddButton name={name} />  
       </div>
+      {
+        show && <ModalProduct id={id} price={price} name={name} image={image} setShow={setShow} />
+      }
+      </>
     )
   
   }
