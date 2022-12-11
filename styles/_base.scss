@@ -19,6 +19,25 @@ main{
   padding: 40px;
   background-color: $color-bg;
   @include small{
-    padding:  0px;
+    padding:  2%;
   }
+}
+
+.alert{
+  height: 56px;
+  width: 356px;
+  position: absolute;
+  background-color: $color-malachite;
+  left: 970px;
+  top: 90px;
+  border-radius: 4px;
+  padding: 0px, 16px, 0px, 0px;
+  box-shadow: 0px 3px 5px 0px #00000033;
+  box-shadow: 0px 1px 18px 0px #0000001F;
+  box-shadow: 0px 6px 10px 0px #00000024;
+  color: $color-white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
 }

@@ -1,8 +1,8 @@
 import React from 'react'
 
-export const ProductList = ({children, title}) => {
+export const ProductList = ({children, title, boostrap, styles}) => {
   return (
-    <section className='productList'>
+    <section className='productList' style={styles}>
         <h3>{title}</h3>
         <div className='productList__container'>
             {children}

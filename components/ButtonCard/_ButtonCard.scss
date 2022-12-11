@@ -1,0 +1,6 @@
+.buttonCard{
+    @include button(80px);
+    @include small {
+        width: 230%;
+    }
+}

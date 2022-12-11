@@ -1,36 +1,38 @@
-import { addToCart, addToState, removeFromCart } from "./actions";
+import { Actions } from "./actions";
 
-export const initialState = {
-  cart: [],
-  offer:[],
-  popular:[]
-  //orderIsOpen: false,
-  //menuIsOpen: false,
-};
 
-export const reducerShop = (state:any, {type, payload}) => {
-  //debugger;  
-  switch (type) {
-      //debugger;
-      case addToCart:
-        return {
-          
+export const reducerShop = (state:any, {type, payload}:any) => {
+  switch (type) {     
+      case Actions.addToCart:
+        const isCart = state.cart.some((i:any) => i.id == payload.id);
+        return {   
          ...state,
-         cart: state.cart.includes(payload) ? state.cart : [...state.cart, payload]
+        cart: isCart ? [...state.cart] : [...state.cart, payload]
         };
-      case removeFromCart:
-        return {
-          ...state,
-          cart: state.cart.filter((item => item.id !== payload.id))
-        };
-      case addToState:
-        const dataPopular = payload.filter(item => item.descuento == null)
-        const dataOffer = payload.filter(item => item.descuento != null)
+      case Actions.addToState:
+        const dataPopular = payload.filter((item:any) => item.descuento == null)
+        const dataOffer = payload.filter((item:any) => item.descuento != null)
         return{
           ...state,
           popular: state.popular = dataPopular,
           offer: state.offer = dataOffer,
         } 
+        case Actions.REMOVE_FROM_CART:
+          return {
+            ...state,
+            cart: state.cart.filter(product =>
+              product.id !== payload.id),
+          };
+      
+      
+    
+/*
+        case EMPTY_CART:
+          return {
+            ...state,
+            cart: state.cart = [],
+          };
+*/
       default:
         throw new Error();
       }

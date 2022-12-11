@@ -5,7 +5,6 @@ import { initialState } from 'reducer/reducer';
 import { AddButton } from '@components/AddButton/AddButton';
 
 
-
 export const ModalProduct = ({image, setShow, name, price,id }) => {
     const { offer} = initialState
     const isOffer = offer.some(i=>i.id == id );

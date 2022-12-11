@@ -28,7 +28,7 @@ export const Product = (
           {/*<button className='product__button'>
               Agregar
     </button>*/}
-      <AddButton name={name}  price={price} image={image} />
+      <AddButton id={id} name={name}  price={price} image={image} quiantity={1}   />
       </div>
       {
         show && <ModalProduct id={id} price={price} name={name} image={image} setShow={setShow} />
@@ -58,7 +58,7 @@ export const Product = (
          {/* <button className='product__button'>
               Agregar
      </button>*/}
-          <AddButton name={name} />  
+          <AddButton id={id}  name={name} price={price} image={image} quiantity={50} />  
       </div>
       {
         show && <ModalProduct id={id} price={price} name={name} image={image} setShow={setShow} />

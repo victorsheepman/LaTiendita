@@ -1,0 +1,15 @@
+.location{
+    height: 24px;
+    width: 353px;
+    display: flex;
+    //background-color: aqua;
+    h1{
+        color: $color-black;
+        margin-left: 10px;
+    }
+    @include small{
+        h1{
+            display: none;
+        }
+    }
+}

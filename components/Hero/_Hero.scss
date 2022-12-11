@@ -1,0 +1,39 @@
+.hero{
+    width: 100%;
+    height: 250px;
+    background-color: aqua;
+    background-image: url('../../public/images/banner.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 16px;
+    margin-bottom: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $color-white;
+    h1{
+        //styleName: Headline 1;
+        font-family: Poppins;
+        font-size: 28px;
+        font-weight: 600;
+        line-height: 42px;
+        letter-spacing: 0em;
+        text-align: left;
+
+    }
+    @include small{
+        height: 132px;
+        h1{
+            //styleName: Body 2/Bold;
+            font-family: Poppins;
+            font-size: 14px;
+            font-weight: 700;
+            line-height: 24px;
+            letter-spacing: 0em;
+            text-align: center;
+
+        }
+
+    }
+
+}

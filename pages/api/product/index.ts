@@ -19,7 +19,6 @@ const allCats = async (req: NextApiRequest, res: NextApiResponse) => {
         res.setHeader('Content-Type', 'application/json')
         res.end(JSON.stringify({ lenght, data: allEntries }))
     } catch (e) {
-        console.error(e)
         res.statusCode = 500
         res.end(
           JSON.stringify({ length: 0, data: [], error: 'Something went wrong' })

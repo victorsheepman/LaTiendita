@@ -1,58 +1,51 @@
-import React, { useState } from 'react'
-import PlacesAutocomplete from 'react-places-autocomplete';
-import scriptLoader from "react-async-loader  
-export const SearchLocation = ({isScriptLoaded, isScriptLoadSucceed }:any) => {
-  const [address, setAddress] = useState("");
+import React, { useContext, useReducer, useState} from 'react'
+import { InputSelection } from '@components/InputSelection/InputSelection';
+import Card from 'react-bootstrap/Card';
 
-  const handleChange = (value:any) => {
-    setAddress(value)
+import {locations} from './helper'
+import { AppContext } from 'Context/LocationContext';
+
+export const SearchLocation = ({ close, exit }) => {
+  const [loc, setLoc] = useState('');
+  const {setLocation} = useContext(AppContext)
+ 
+  const handleChange = (e) => {
+    e.preventDefault();
+    setLoc(e.target.value);    
+  };
+  const handleSubmit = ()=>{
+    setLocation(loc)
+   
+    exit(false)
   }
+  return (
+    <div className='shadowContainer'>
+      <div className='searchLocation'>
+        <div className='searchLocation__content'>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" onClick={close}>
+            <path d="M18.7071 6.70711C19.0976 6.31658 19.0976 5.68342 18.7071 5.29289C18.3166 4.90237 17.6834 4.90237 17.2929 5.29289L12 10.5858L6.70711 5.29289C6.31658 4.90237 5.68342 4.90237 5.29289 5.29289C4.90237 5.68342 4.90237 6.31658 5.29289 6.70711L10.5858 12L5.29289 17.2929C4.90237 17.6834 4.90237 18.3166 5.29289 18.7071C5.68342 19.0976 6.31658 19.0976 6.70711 18.7071L12 13.4142L17.2929 18.7071C17.6834 19.0976 18.3166 19.0976 18.7071 18.7071C19.0976 18.3166 19.0976 17.6834 18.7071 17.2929L13.4142 12L18.7071 6.70711Z" fill="black"/>
+          </svg>
 
-  const handleSelect = (value:any) => {
-    setAddress(value)
-  }
-
-  if (isScriptLoaded && isScriptLoadSucceed) {
-    return (
-      <div>
-        <PlacesAutocomplete
-          value={address}
-          onChange={handleChange}
-          onSelect={handleSelect}
-        >
-          {({
-            getInputProps,
-            suggestions,
-            getSuggestionItemProps,
-            loading,
-          }) => (
-            <div>
-              <input
-                {...getInputProps({
-                  placeholder: "Enter Address...",
-                })}
-              />
-              <div>
-                {loading && <div>Loading...</div>}
-                {suggestions.map((suggestion) => {
-                  const style = suggestion.active
-                    ? { backgroundColor: "#a83232", cursor: "pointer" }
-                    : { backgroundColor: "#ffffff", cursor: "pointer" };
-
-                  return (
-                    // eslint-disable-next-line react/jsx-key
-                    <div {...getSuggestionItemProps(suggestion, { style })}>
-                      {suggestion.description}
-                    </div>
-                  );
-                })}
-              </div>
-            </div>
-          )}
-        </PlacesAutocomplete>
+          <h1>¿Dónde quieres recibir tu pedido?</h1>
+          <p className='body1-regular'>
+            Para poder ofrecerte productos dentro de tu área, necesitamos tu dirección
+          </p>
+          <InputSelection 
+            options={locations}
+            handleChange={handleChange}
+            bootstrap={'mt-3'}
+            styles={
+              {
+                marginTop:'2%'
+              }
+            }
+          />
+          <button className='searchLocation__button' onClick={handleSubmit} >
+            Buscar
+          </button>
+        </div>
       </div>
-    );
-  } else {
-    return <div></div>;
-  }
+    </div>
+
+  )
 }

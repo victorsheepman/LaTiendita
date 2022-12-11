@@ -12,7 +12,17 @@
 @import '../components/ModalProduct/ModalProduct';
 @import '../components/AddButton/AddButton';
 @import '../components/ButtonCount/ButtonCount';
+@import '../components/Location/Location';
+@import '../components/ButtonCard/ButtonCard';
+@import '../components/Hero/Hero';
+@import '../components/SearchLocation/SearchLocation';
+@import '../components/Null/Null';
+@import '../components/Item/Item';
+@import '../components/Pay/Pay';
 
 //CONTAINERS
 @import '../Containers/ProductList';
 @import '../Containers/Selection/Selection';
+@import '../containers/Header/Header';
+@import '../containers/Canasta/Canasta';
+@import '../containers/ItemList/ItemList';
