@@ -1,0 +1,25 @@
+.payment{
+    &__header{
+        width: 100%;
+        height: 80px;
+        display: flex;
+        align-items: center;
+        padding-left: 2%;
+    }
+    &__container{
+        width: 100%;
+        height: 700px;
+        display: flex;
+    }
+    
+}
+    .test-1{
+        width:  50%;
+        height: 100%;
+        background-color: red;
+    }
+    .test-2{
+        width: 50%;
+        height: 100%;
+        background-color: aqua;
+    }

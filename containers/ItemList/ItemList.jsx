@@ -3,14 +3,21 @@ import React, { useContext } from 'react'
 import { AppContext } from 'Context/LocationContext';
 import { Item } from '../../components/Item/Item'
 import {Pay} from '../../components/Pay/Pay'
-import { EMPTY_CART } from 'reducer/actions';
+import { Actions } from 'reducer/actions';
 
 export const ItemList = ({cart}) => {
+
   const {  dispatch } =useContext(AppContext);
   const handlerEmpty = () =>{
-    // eslint-disable-next-line react-hooks/rules-of-hooks
-    dispatch({type: EMPTY_CART});    
-  }  
+    
+    dispatch(
+      {
+        type: Actions.EMPTY_CART
+      }
+    );    
+  
+  }
+
   return (
     <>
     <div className='itemList'>

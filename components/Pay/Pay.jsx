@@ -1,5 +1,6 @@
 import { AppContext } from 'Context/LocationContext'
 import React, {useContext} from 'react'
+import Link from "next/link";
 
 export const Pay = () => {
     const { state } = useContext(AppContext);
@@ -11,9 +12,9 @@ export const Pay = () => {
                 {cart.length}
             </p>
         </div>
-        <p className='body-2-bold'> 
-            Ir a pagar
-        </p>
+        <Link href="/Payment" passHref> 
+           <a className='body-2-bold' > Ir a pagar</a>
+        </Link>
         <p className='body-2-regular'>
             
         </p>
