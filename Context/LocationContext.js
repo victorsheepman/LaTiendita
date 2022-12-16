@@ -17,10 +17,11 @@ export const initialLocation = ()=>{
     // eslint-disable-next-line react-hooks/rules-of-hooks
     const [state, dispatch] = useReducer(reducerShop, initialState);
 
+    // eslint-disable-next-line react-hooks/rules-of-hooks
     const [cost, setCost] = useState(0)
     
     
-    let prices:Array<number> = [];
+    let prices = [];
     let costoTotal = 0;
     
     const sumTotal = (current) => {

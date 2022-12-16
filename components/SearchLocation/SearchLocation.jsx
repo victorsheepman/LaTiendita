@@ -5,7 +5,7 @@ import { AppContext } from 'Context/LocationContext';
 
 export const SearchLocation = ({ close, exit }) => {
   const [loc, setLoc] = useState('');
-  const {setLocation} = useContext(AppContext)
+  const { setLocation } = useContext(AppContext)
  
   const handleChange = (e) => {
     e.preventDefault();

@@ -1,20 +1,18 @@
 //import { SearchLocation } from '@components/SearchLocation/SearchLocation'
 import { Product } from '@components/Product/Product'
 import { ProductList } from '../containers/ProductList'
-import type { NextPage } from 'next'
-import { useContext, useEffect, useReducer, useState} from 'react' 
-import { reducerShop } from 'reducer/reducer'
+
+import { useContext, useEffect} from 'react' 
 import { Actions } from 'reducer/actions'
 import { Hero } from '../components/Hero/Hero'
 import { Header } from '@containers/Header/Header'
 
 import { AppContext } from 'Context/LocationContext'
-import { initialState } from 'reducer/InitialState'
  
 
 
 //ESTADO INICIAL
-const Home: NextPage = () => {
+const Home  = () => {
   const { alert, setAlert, state, dispatch} = useContext(AppContext);
   //CICLO DE VIDA
   useEffect(() => {
