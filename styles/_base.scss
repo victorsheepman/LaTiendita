@@ -26,10 +26,10 @@ main{
 .alert{
   height: 56px;
   width: 356px;
-  position: absolute;
+  position: sticky;
   background-color: $color-malachite;
   left: 970px;
-  top: 90px;
+  top: 30px;
   border-radius: 4px;
   padding: 0px, 16px, 0px, 0px;
   box-shadow: 0px 3px 5px 0px #00000033;
@@ -39,5 +39,31 @@ main{
   display: flex;
   justify-content: center;
   align-items: center;
+  &--error{
+    @extend .alert;
+    background-color: $color-scarlet;
+  }
+  
+  @include tablet{
+    position: sticky;
+    left: 400px;
 
+  }
+  @include small{
+    position: sticky;
+    left: 400px;
+    width: 256px;
+
+  }
+  @include medium{
+    position: sticky;
+    left: 700px;
+    top: 30px;
+
+  }
+  @include large{
+    
+    top: 30px;
+
+  }
 }

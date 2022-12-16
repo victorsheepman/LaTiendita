@@ -25,9 +25,6 @@ export const Product = (
                   {name}
               </p>
           </div>
-          {/*<button className='product__button'>
-              Agregar
-    </button>*/}
       <AddButton id={id} name={name}  price={price} image={image} quiantity={1}   />
       </div>
       {
@@ -55,9 +52,6 @@ export const Product = (
                   {name}
               </p>
           </div>
-         {/* <button className='product__button'>
-              Agregar
-     </button>*/}
           <AddButton id={id}  name={name} price={price} image={image} quiantity={50} />  
       </div>
       {

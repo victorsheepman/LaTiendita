@@ -24,4 +24,36 @@
     &__empty:hover{
         color: $color-orange;
     }
+    @include tablet{
+       // background-color: aquamarine;
+        height: 100vh;
+        &__body{
+            
+            height: 530px;
+           
+        }
+    }
+    @include small{
+        height: 100vh;
+        &__body{
+            
+            height: 530px;
+           
+        }
+
+    }
+    @include medium{
+        &__body{
+            
+            height: 530px;
+           
+        }
+    }
+    @include large{
+        &__body{
+            
+            height: 530px;
+           
+        }
+    }
 }

@@ -1,11 +1,10 @@
 import { AppContext } from 'Context/LocationContext';
 import React, { useContext } from 'react'
-import { Actions, addPrice, SUB_QUANTITY } from 'reducer/actions';
+import { Actions } from 'reducer/actions';
 
 export const ButtonCount = ({quiantity,setQuantity, id, price }) => {
   let count = quiantity < 50 ? 1 : 50
   const { dispatch } =useContext(AppContext);
-  let newPriceAdd = quiantity * price;
   let newPriceSub = price / quiantity ;
   const sub = () =>{
     // eslint-disable-next-line react-hooks/rules-of-hooks
@@ -17,7 +16,6 @@ export const ButtonCount = ({quiantity,setQuantity, id, price }) => {
     
   } 
   
-  console.log('newPrice', price); 
  const add = ()=>{
           dispatch({
                 type:Actions.ADD_QUANTITY,

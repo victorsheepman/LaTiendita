@@ -1,7 +1,6 @@
-import React, { useState } from 'react'
-import { ButtonCount } from '../ButtonCount/ButtonCount';
-import {Selection, Seletion} from '../../containers/Selection/Selection'
-import { initialState } from 'reducer/reducer';
+import React from 'react'
+import {Selection} from '../../containers/Selection/Selection'
+import { initialState } from 'reducer/InitialState';
 import { AddButton } from '@components/AddButton/AddButton';
 
 

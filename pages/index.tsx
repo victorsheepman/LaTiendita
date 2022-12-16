@@ -35,7 +35,11 @@ const Home: NextPage = () => {
   useEffect(() => {
 		if(alert){
       setTimeout(() => {
-        setAlert(false)
+        setAlert({
+          ...alert,
+          succes:false,
+          error:false
+        })
       }, 2000);
     }
     
@@ -48,11 +52,18 @@ const Home: NextPage = () => {
     <>
     <Header />
     <main>
-      {alert &&
+      {alert.succes &&
         <div
           className='alert'
         >
          <p className='body-2-regular'>Producto añadido</p>  
+        </div>
+      }
+      {alert.error &&
+        <div
+          className='alert--error'
+        >
+         <p className='body-2-regular'>El producto ya esta en el carrito</p>  
         </div>
       }
       <Hero />

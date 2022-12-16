@@ -16,6 +16,10 @@
     }
     @include small{
         padding: 0px;
+        padding-top: 30px;
+        h3{
+            margin-left: 16px;
+        }
         &__container{
             display: flex;
             align-items: center;

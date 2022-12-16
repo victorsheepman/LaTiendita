@@ -3,4 +3,7 @@
     @include small {
         width: 230%;
     }
+    &__count{
+        margin-left: 3px;
+    }
 }

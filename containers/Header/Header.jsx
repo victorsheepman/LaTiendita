@@ -1,8 +1,7 @@
 import React from 'react'
 import {Location} from '../../components/Location/Location'
 import { ButtonCard } from '../../components/ButtonCard/ButtonCard'
-export const Header = () => {
-  return (
+export const Header = () => (
     <header className='header'>
         <h3 className='header__logo'>
             Tiendita
@@ -15,4 +14,4 @@ export const Header = () => {
         </div>
     </header>
   )
-}
+

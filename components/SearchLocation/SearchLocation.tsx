@@ -1,8 +1,6 @@
-import React, { useContext, useReducer, useState} from 'react'
+import React, { useContext, useState} from 'react'
 import { InputSelection } from '@components/InputSelection/InputSelection';
-import Card from 'react-bootstrap/Card';
-
-import {locations} from './helper'
+import {locations} from '../../utils/helper'
 import { AppContext } from 'Context/LocationContext';
 
 export const SearchLocation = ({ close, exit }) => {

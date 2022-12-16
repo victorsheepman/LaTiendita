@@ -1,5 +1,4 @@
-import React, { useEffect, useReducer, useState, useContext } from 'react';
-//import { initialState, reducerShop } from '../../reducer/reducer';
+import React, { useState, useContext } from 'react';
 import {Canasta} from '../../containers/Canasta/Canasta'
 import { AppContext } from 'Context/LocationContext';
 
@@ -7,14 +6,7 @@ import { AppContext } from 'Context/LocationContext';
 export const ButtonCard = () => {
   const {state} = useContext(AppContext)
   const [modal, setModal] = useState(false)
-  const [quantityCart, setQuantityCart] = useState(0)
-
-/*  useEffect(() => {
-    console.log('Estado nuevo', state);
-  }, [state])
-*/
-
-  
+  let count = state.cart.length
   return (
     <>
       <button type='button' className='buttonCard' onClick={()=>setModal(true)}>
@@ -28,12 +20,20 @@ export const ButtonCard = () => {
               </clipPath>
               </defs>
           </svg>
+          {
+            state.cart.length > 0 && 
+            <span className='buttonCard__count'>
+              {count}
+            </span>
+          }
+          
           
       </button>
       {
-        modal && <Canasta 
-                    setModal={setModal}
-                  />
+        modal && 
+        <Canasta 
+          setModal={setModal}
+        />
       }
     </>
   )

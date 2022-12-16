@@ -6,7 +6,7 @@ import React, { useContext } from 'react'
 import { Actions} from '../../reducer/actions';
 
 export const AddButton = ({id,name, price, image, quiantity, madurez}) => {
-    const {  setAlert, dispatch } = useContext (AppContext);
+    const {  setAlert, dispatch, alert, state } = useContext (AppContext);
     const handler = () =>{
         // eslint-disable-next-line react-hooks/rules-of-hooks
         dispatch(
@@ -21,8 +21,19 @@ export const AddButton = ({id,name, price, image, quiantity, madurez}) => {
                     madurez
                 }
             }
-        );    
-        setAlert(true);
+        ); 
+        if(state.cart.some(i=>i.id === id)) {
+            setAlert({
+                ...alert,
+                error:true
+            })
+        }else{
+            setAlert({
+                ...alert,
+                succes:true
+            })
+        }
+       ;
     }   
 
     return (

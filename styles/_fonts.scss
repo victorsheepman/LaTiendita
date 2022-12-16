@@ -42,6 +42,10 @@ h3{
 }
 .caption-regular{
     font: $caption-regular;
+    &--error{
+        @extend .caption-regular;
+        color: $color-scarlet;
+    }
 }
 .body-2-regular{
     font:$body2-regular;

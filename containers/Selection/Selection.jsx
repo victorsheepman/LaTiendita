@@ -1,11 +1,11 @@
 import { AddButton } from '@components/AddButton/AddButton';
-import { ButtonCount } from '@components/ButtonCount/ButtonCount';
+//import { ButtonCount } from '@components/ButtonCount/ButtonCount';
 import React, { useState } from 'react';
 import {InputSelection} from '../../components/InputSelection/InputSelection'
 import {options} from './Helper'
 
 export const Selection = ({name, price, image}) => {
-    const [quiantity, setQuantity] = useState(250);
+    //const [quiantity, setQuantity] = useState(250);
     const [maduro, setMaduro] = useState('Maduro');
     const handleChange = (e)=>{
         setMaduro(e.target.value);
@@ -20,10 +20,6 @@ export const Selection = ({name, price, image}) => {
             handleChange={handleChange}
         />
         <div className='selection__buttons mt-3'>
-            <ButtonCount 
-                quiantity={quiantity}
-                setQuantity={setQuantity}
-            />
             <AddButton 
                 quiantity={quiantity}
                 name={name}

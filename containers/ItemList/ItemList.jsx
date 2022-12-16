@@ -36,13 +36,13 @@ export const ItemList = ({cart}) => {
           ))
         }
       </div>
-      
-      <div className='itemList__footer'>
-        <span className='body-2-regular itemList__empty' onClick={handlerEmpty}>
-          Vaciar canasta
-        </span>
-        <Pay />
-      </div>
+
+          <div className='itemList__footer'>
+            <span className='body-2-regular itemList__empty' onClick={handlerEmpty}>
+              Vaciar canasta
+            </span>
+            <Pay />
+          </div>      
     </div>
    
     </>

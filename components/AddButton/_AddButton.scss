@@ -1,3 +1,6 @@
 .AddButton{
     @include button(60%);
+    cursor: pointer;
+    
 }
+

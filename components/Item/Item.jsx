@@ -1,12 +1,15 @@
-import React, { useContext, useEffect } from 'react'
-import { ButtonCount } from '@components/ButtonCount/ButtonCount';
-import { useState } from 'react';
+import React, { useContext } from 'react'
 import { AppContext } from 'Context/LocationContext';
 import { Actions } from 'reducer/actions';
 
-export const Item = ({id,image, name, price, quiantityProduct}) => {
-    const {dispatch} = useContext(AppContext);
-    const [quiantity, setQuantity] = useState(quiantityProduct);
+export const Item = ({id,image, name, price}) => {
+    const { dispatch, sumTotal } = useContext( AppContext );
+    sumTotal(
+        {
+            id,
+            price
+        }
+    )
 
     const handleRemove = ()=>{
         dispatch({
@@ -26,7 +29,7 @@ export const Item = ({id,image, name, price, quiantityProduct}) => {
                 {name}
             </h4>
             <span className='body-1-bold'>
-                {parseFloat(price * quiantity)}$
+                {parseFloat(price)}$
             </span>
         </div>
         <svg onClick={handleRemove} xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#ff1f18" class="bi bi-trash-fill" viewBox="0 0 16 16">

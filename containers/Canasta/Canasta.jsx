@@ -1,6 +1,5 @@
 import { AppContext } from 'Context/LocationContext';
-import React, { useContext, useReducer, useEffect } from 'react'
-import { initialState, reducerShop } from 'reducer/reducer';
+import React, { useContext } from 'react'
 import { Null } from '../../components/Null/Null'
 import { ItemList } from '../../containers/ItemList/ItemList';
 

@@ -8,10 +8,9 @@
 
 //COMPONENTES
 @import '../components/Product/Product';
-@import '../components/Prueba/Prueba';
+
 @import '../components/ModalProduct/ModalProduct';
 @import '../components/AddButton/AddButton';
-@import '../components/ButtonCount/ButtonCount';
 @import '../components/Location/Location';
 @import '../components/ButtonCard/ButtonCard';
 @import '../components/Hero/Hero';
@@ -19,6 +18,8 @@
 @import '../components/Null/Null';
 @import '../components/Item/Item';
 @import '../components/Pay/Pay';
+@import '../components/PayForm/PayForm';
+@import '../components/ModalAlert/ModalAlert';
 
 //CONTAINERS
 @import '../Containers/ProductList';

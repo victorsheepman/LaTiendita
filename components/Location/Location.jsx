@@ -1,6 +1,5 @@
-import React, { useContext, useEffect, useReducer, useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { SearchLocation } from '@components/SearchLocation/SearchLocation';
-import { initialState, reducerShop } from 'reducer/reducer';
 import { AppContext } from 'Context/LocationContext';
 
 export const Location = () => {
