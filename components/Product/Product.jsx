@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import {useOffer} from '../../hooks/useOffer';
 import {ModalProduct} from '../ModalProduct/ModalProduct';
 import {AddButton} from '../AddButton/AddButton'
+import Image from 'next/image';
 export const Product = (
   {
     name, 
@@ -17,7 +18,7 @@ export const Product = (
     return (<>
       <div className='product'>
           <figure className='product__image' onClick={()=>setShow(true)}>
-            <img src={image} alt="" />
+            <Image src={image} alt="" />
           </figure>
           <div className='product__body'>
               <h3>${price}</h3>
@@ -44,7 +45,7 @@ export const Product = (
             {offerView()}% dto.
           </span>
           <figure className='product__image' onClick={()=>setShow(true)}>
-            <img src={image} alt="" />
+            <Image src={image} alt="" />
           </figure>
           <div className='product__body'>
               <h3>${newPrice}/Kg <span className='product__body--offer'>$ {price}/kg</span></h3>

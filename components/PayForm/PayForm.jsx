@@ -57,7 +57,7 @@ export const PayForm = ({cost, setShow}) => {
        <div className='Payform__form'>
             <form onSubmit={handleSubmit(onSubmit)}>
                 <div className="mb-3">
-                    <label  name="mail" class="body-2-regular">
+                    <label  name="mail" className="body-2-regular">
                         Correo electronico
                     </label>
                     <br />
@@ -120,7 +120,7 @@ export const PayForm = ({cost, setShow}) => {
                         />
                     </div>
                     <div className="mb-3" style={{ marginTop: "32px" }}>
-                        <label for="exampleFormControlInput1" class="body-2-regular">
+                        <label htmlFor="name" className="body-2-regular">
                             Nombre de la tarjeta
                         </label>
                         <br />

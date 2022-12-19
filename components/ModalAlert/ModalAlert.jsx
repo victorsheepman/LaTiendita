@@ -2,6 +2,7 @@ import { AppContext } from 'Context/LocationContext'
 import Link from 'next/link'
 import React, {useContext} from 'react'
 import { Actions } from 'reducer/actions'
+import Image from 'next/image';
 
 export const ModalAlert = () => {
     const {dispatch} = useContext(AppContext)
@@ -14,7 +15,8 @@ export const ModalAlert = () => {
     <div className='modalAlert'>
         <div className='modalAlert__container'>
             <figure className='modalAlert__image'>
-                <img src="images/Hands Buying.png" alt="" />
+                Img
+                <Image src="images/Hands Buying.png" alt="" />
             </figure>
             <h2>¡Gracias por tu compra!</h2>
             <Link href="/" passHref>
